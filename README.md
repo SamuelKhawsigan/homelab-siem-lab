@@ -57,9 +57,9 @@ flowchart TB
 |---|-------|-----|--------|
 | 1 | Proxmox install — bare metal to web UI | [01-proxmox-install.md](docs/01-proxmox-install.md) | completed |
 | 2 | Proxmox hardening + Tailscale remote access | [02-proxmox-hardening.md](docs/02-proxmox-hardening.md) | completed |
-| 3 | Lab networking — isolated bridge + OPNsense | [03-lab-networking.md](docs/03-lab-networking.md) | ⏳ Pending |
-| 4 | Wazuh SIEM deployment | [04-wazuh-setup.md](docs/04-wazuh-setup.md) | ⏳ Pending |
-| 5 | Victim setup + agent telemetry | [05-victim-telemetry.md](docs/05-victim-telemetry.md) | ⏳ Pending |
+| 3 | Lab networking — isolated bridge + OPNsense | [03-lab-networking.md](docs/03-lab-networking.md) | completed |
+| 4 | Wazuh SIEM deployment | [04-wazuh-setup.md](docs/04-wazuh-setup.md) | completed |
+| 5 | Victim setup + agent telemetry | [05-victim-telemetry.md](docs/05-victim-telemetry.md) | completed |
 | 6 | Attack simulation (ATT&CK-mapped) | [06-attack-simulation.md](docs/06-attack-simulation.md) | ⏳ Pending |
 | 7 | Detection — Wazuh rules + dashboard | [07-detection.md](docs/07-detection.md) | ⏳ Pending |
 | 8 | Defense — active response + re-test | [08-defense.md](docs/08-defense.md) | ⏳ Pending |
