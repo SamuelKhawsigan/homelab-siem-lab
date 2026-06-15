@@ -1,6 +1,6 @@
 # 🛡️ Homelab SIEM Lab
 
-> **End-to-end attack simulation and detection on a self-hosted Proxmox homelab — built on an Intel N305 mini PC, powered by Wazuh, and documented from bare metal to blocked attack.**
+> **End-to-end attack simulation and detection on a self-hosted Proxmox homelab. Built on an Intel N305 mini PC, powered by Wazuh, and documented from bare metal to blocked attack.**
 
 ---
 
@@ -60,9 +60,9 @@ flowchart TB
 | 3 | Lab networking — isolated bridge + OPNsense | [03-lab-networking.md](docs/03-lab-networking.md) | completed |
 | 4 | Wazuh SIEM deployment | [04-wazuh-setup.md](docs/04-wazuh-setup.md) | completed |
 | 5 | Victim setup + agent telemetry | [05-victim-telemetry.md](docs/05-victim-telemetry.md) | completed |
-| 6 | Attack simulation (ATT&CK-mapped) | [06-attack-simulation.md](docs/06-attack-simulation.md) | ⏳ Pending |
-| 7 | Detection — Wazuh rules + dashboard | [07-detection.md](docs/07-detection.md) | ⏳ Pending |
-| 8 | Defense — active response + re-test | [08-defense.md](docs/08-defense.md) | ⏳ Pending |
+| 6 | Attack simulation (ATT&CK-mapped) | [06-attack-simulation.md](docs/06-attack-simulation.md) |  Pending |
+| 7 | Detection — Wazuh rules + dashboard | [07-detection.md](docs/07-detection.md) |  Pending |
+| 8 | Defense — active response + re-test | [08-defense.md](docs/08-defense.md) |  Pending |
 
 ---
 
@@ -70,11 +70,11 @@ flowchart TB
 
 | Technique ID | Name | Tool Used | Wazuh Rule | Status |
 |---|---|---|---|---|
-| T1110.001 | Brute Force: Password Guessing | Hydra | Custom rule `100001` | ⏳ Pending |
-| T1046 | Network Service Discovery | Nmap | Built-in | ⏳ Pending |
-| T1059.004 | Command & Scripting: Bash | Manual | auditd | ⏳ Pending |
-| T1003 | OS Credential Dumping | Mimikatz / Atomic | Sysmon + custom rule | ⏳ Pending |
-| T1059.001 | PowerShell execution | Atomic Red Team | Sysmon Event ID 4104 | ⏳ Pending |
+| T1110.001 | Brute Force: Password Guessing | Hydra | Custom rule `100001` |  Pending |
+| T1046 | Network Service Discovery | Nmap | Built-in |  Pending |
+| T1059.004 | Command & Scripting: Bash | Manual | auditd |  Pending |
+| T1003 | OS Credential Dumping | Mimikatz / Atomic | Sysmon + custom rule |  Pending |
+| T1059.001 | PowerShell execution | Atomic Red Team | Sysmon Event ID 4104 |  Pending |
 
 *Table updated as each phase is completed.*
 
@@ -104,7 +104,7 @@ flowchart TB
 
 ## Why I Built This
 
-I work in an IT/security role and wanted to go beyond theory — actually building the infrastructure, simulating the attacks, writing the detection rules, and proving the defenses work. This homelab runs on a mini PC at my office and is fully remote-accessible via Tailscale.
+I work in an IT/security role and wanted to go beyond theory and actually building the infrastructure, simulating the attacks, writing the detection rules, and proving the defenses work. This homelab runs on a mini PC at my office and is fully remote-accessible via Tailscale.
 
 Every phase of this project reflects something I learned by doing it wrong first.
 
