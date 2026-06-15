@@ -55,8 +55,8 @@ flowchart TB
 
 | # | Phase | Doc | Status |
 |---|-------|-----|--------|
-| 1 | Proxmox install — bare metal to web UI | [01-proxmox-install.md](docs/01-proxmox-install.md) | 🔄 In progress |
-| 2 | Proxmox hardening + Tailscale remote access | [02-proxmox-hardening.md](docs/02-proxmox-hardening.md) | ⏳ Pending |
+| 1 | Proxmox install — bare metal to web UI | [01-proxmox-install.md](docs/01-proxmox-install.md) | completed |
+| 2 | Proxmox hardening + Tailscale remote access | [02-proxmox-hardening.md](docs/02-proxmox-hardening.md) | completed |
 | 3 | Lab networking — isolated bridge + OPNsense | [03-lab-networking.md](docs/03-lab-networking.md) | ⏳ Pending |
 | 4 | Wazuh SIEM deployment | [04-wazuh-setup.md](docs/04-wazuh-setup.md) | ⏳ Pending |
 | 5 | Victim setup + agent telemetry | [05-victim-telemetry.md](docs/05-victim-telemetry.md) | ⏳ Pending |
