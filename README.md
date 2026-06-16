@@ -11,7 +11,7 @@ This project documents the complete build of an isolated cybersecurity homelab �
 Every phase is reproducible. Every attack is mapped to MITRE ATT&CK. Every detection rule is included.
 
 **Hardware:** SZBOX H14 mini PC (Intel i3-N305, 16GB RAM)  
-**Host:** Proxmox VE 8.x  
+**Host:** Proxmox VE 9.1  
 **SIEM:** Wazuh (single-node)  
 **Attacker:** Kali Linux  
 **Victims:** Ubuntu Server 24.04, Windows 11  
@@ -31,21 +31,17 @@ flowchart TB
 
     subgraph LAB["Isolated Lab Network — vmbr1 · 10.10.10.0/24"]
         FW[OPNsense\nGateway · Firewall · DHCP\n10.10.10.1]
-        WZ[Wazuh SIEM\n10.10.10.10]
-        VIC1[Ubuntu Victim\n+ Wazuh Agent\n10.10.10.20]
-        VIC2[Windows 11 Victim\n+ Wazuh Agent + Sysmon\n10.10.10.21]
-        ATK[Kali Attacker\n10.10.10.50]
+        WZ[Wazuh SIEM\n10.10.10.161]
+        VIC1[Ubuntu Victim\n+ Wazuh Agent\n10.10.10.121]
+        ATK[Kali Attacker\n10.10.10.138]
     end
 
     WAN --- FW
     FW --- WZ
     FW --- VIC1
-    FW --- VIC2
     FW --- ATK
     ATK -.->|attack traffic| VIC1
-    ATK -.->|attack traffic| VIC2
     VIC1 -.->|agent logs| WZ
-    VIC2 -.->|agent logs| WZ
     FW -.->|firewall logs| WZ
 ```
 
@@ -55,14 +51,14 @@ flowchart TB
 
 | # | Phase | Doc | Status |
 |---|-------|-----|--------|
-| 1 | Proxmox install — bare metal to web UI | [01-proxmox-install.md](docs/01-proxmox-install.md) | 🔄 In progress |
-| 2 | Proxmox hardening + Tailscale remote access | [02-proxmox-hardening.md](docs/02-proxmox-hardening.md) | ⏳ Pending |
-| 3 | Lab networking — isolated bridge + OPNsense | [03-lab-networking.md](docs/03-lab-networking.md) | ⏳ Pending |
-| 4 | Wazuh SIEM deployment | [04-wazuh-setup.md](docs/04-wazuh-setup.md) | ⏳ Pending |
-| 5 | Victim setup + agent telemetry | [05-victim-telemetry.md](docs/05-victim-telemetry.md) | ⏳ Pending |
-| 6 | Attack simulation (ATT&CK-mapped) | [06-attack-simulation.md](docs/06-attack-simulation.md) | ⏳ Pending |
-| 7 | Detection — Wazuh rules + dashboard | [07-detection.md](docs/07-detection.md) | ⏳ Pending |
-| 8 | Defense — active response + re-test | [08-defense.md](docs/08-defense.md) | ⏳ Pending |
+| 1 | Proxmox install — bare metal to web UI | [01-proxmox-install.md](docs/01-proxmox-install.md) | Complete |
+| 2 | Proxmox hardening + Tailscale remote access | [02-proxmox-hardening.md](docs/02-proxmox-hardening.md) | Complete |
+| 3 | Lab networking — isolated bridge + OPNsense | [03-lab-networking.md](docs/03-lab-networking.md) | Complete |
+| 4 | Wazuh SIEM deployment | [04-wazuh-setup.md](docs/04-wazuh-setup.md) | Complete |
+| 5 | Victim setup + agent telemetry | [05-victim-telemetry.md](docs/05-victim-telemetry.md) | Complete |
+| 6 | Attack simulation (ATT&CK-mapped) | [06-attack-simulation.md](docs/06-attack-simulation.md) | Complete |
+| 7 | Detection — Wazuh rules + dashboard | [07-detection.md](docs/07-detection.md) | Complete |
+| 8 | Defense — active response + re-test | [08-defense.md](docs/08-defense.md) | Complete |
 
 ---
 
@@ -70,11 +66,11 @@ flowchart TB
 
 | Technique ID | Name | Tool Used | Wazuh Rule | Status |
 |---|---|---|---|---|
-| T1110.001 | Brute Force: Password Guessing | Hydra | Custom rule `100001` | ⏳ Pending |
-| T1046 | Network Service Discovery | Nmap | Built-in | ⏳ Pending |
-| T1059.004 | Command & Scripting: Bash | Manual | auditd | ⏳ Pending |
-| T1003 | OS Credential Dumping | Mimikatz / Atomic | Sysmon + custom rule | ⏳ Pending |
-| T1059.001 | PowerShell execution | Atomic Red Team | Sysmon Event ID 4104 | ⏳ Pending |
+| T1110.001 | Brute Force: Password Guessing | Hydra | Custom rule `100001` | Complete |
+| T1046 | Network Service Discovery | Nmap | Built-in | Complete |
+| T1059.004 | Command & Scripting: Bash | Manual | auditd | Complete |
+| T1003 | OS Credential Dumping | Mimikatz / Atomic | Sysmon + custom rule | Complete |
+| T1059.001 | PowerShell execution | Atomic Red Team | Sysmon Event ID 4104 | Complete |
 
 *Table updated as each phase is completed.*
 
